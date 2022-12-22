@@ -1,10 +1,12 @@
 <?php
 
-use App\Http\Controllers\BreederController;
+use App\Models\PriceIncrement;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CanineController;
+use App\Http\Controllers\BreederController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VeternarianController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PriceIncrementController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +38,9 @@ Route::middleware('splade')->group(function () {
         Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
         Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
         Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+        // Settings
+        Route::resource('/dashboard/settings/price_increments', PriceIncrementController::class);
 
         Route::resource('/dashboard/canines', CanineController::class);
         Route::resource('/dashboard/veternarians', VeternarianController::class);
