@@ -8,6 +8,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VeternarianController;
 use App\Http\Controllers\PriceIncrementController;
 use App\Http\Controllers\ServiceCategoryController;
+use App\Http\Controllers\ServiceController;
+use App\Models\Service;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,8 +43,9 @@ Route::middleware('splade')->group(function () {
         Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
         // Settings
-        Route::resource('/dashboard/settings/price_increments', PriceIncrementController::class);
+        Route::resource('/dashboard/settings/service', ServiceController::class);
         Route::resource('/dashboard/settings/service_category', ServiceCategoryController::class);
+        Route::resource('/dashboard/settings/price_increments', PriceIncrementController::class);
 
         Route::resource('/dashboard/canines', CanineController::class);
         Route::resource('/dashboard/veternarians', VeternarianController::class);
