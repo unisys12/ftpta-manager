@@ -4,6 +4,7 @@ use App\Models\PriceIncrement;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CanineController;
 use App\Http\Controllers\BreederController;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VeternarianController;
 use App\Http\Controllers\PriceIncrementController;
@@ -50,6 +51,7 @@ Route::middleware('splade')->group(function () {
         Route::resource('/dashboard/canines', CanineController::class);
         Route::resource('/dashboard/veternarians', VeternarianController::class);
         Route::resource('/dashboard/breeders', BreederController::class);
+        Route::resource('/dashboard/events', EventController::class);
     });
 
     require __DIR__ . '/auth.php';
