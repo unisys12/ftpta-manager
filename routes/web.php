@@ -1,16 +1,17 @@
 <?php
 
+use App\Models\Event;
+use App\Models\Service;
 use App\Models\PriceIncrement;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\CanineController;
 use App\Http\Controllers\BreederController;
-use App\Http\Controllers\EventController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\VeternarianController;
 use App\Http\Controllers\PriceIncrementController;
 use App\Http\Controllers\ServiceCategoryController;
-use App\Http\Controllers\ServiceController;
-use App\Models\Service;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,7 +37,9 @@ Route::middleware('splade')->group(function () {
 
     Route::middleware('auth')->group(function () {
         Route::get('/dashboard', function () {
-            return view('dashboard');
+            // dd(Event::all());
+            $events = Event::all();
+            return view('dashboard', ['events' => $events]);
         })->middleware(['verified'])->name('dashboard');
 
         Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
