@@ -36,12 +36,7 @@ class DashboardController extends Controller
                 ]
             );
         }
-        // dd($result);
 
         return view('dashboard', ['events' => $result]);
-
-        // $service_id = $events_result->map(fn (Event $event) => $event->service_id);
-        // $service_id = $events_result->map(fn (Event $event) => $event->user_id);
-        // $service_id = $events_result->map(fn (Event $event) => $event->canine_id);
     }
 }
