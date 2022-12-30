@@ -80,13 +80,12 @@ class ServiceCategoryController extends Controller
     public function update(UpdateServiceCategoryRequest $request, ServiceCategory $serviceCategory)
     {
         $local = ServiceCategory::find($serviceCategory->id);
-        $data = $serviceCategory->validated();
 
-        $local->name = $data['name'];
-        $local->description = $data['description'];
-        $local->backgroundColor = $data['backgroundColor'];
-        $local->borderColor = $data['borderColor'];
-        $local->textColor = $data['textColor'];
+        $local->name = $request->name;
+        $local->description = $request->description;
+        $local->backgroundColor = $request->backgroundColor;
+        $local->borderColor = $request->borderColor;
+        $local->textColor = $request->textColor;
 
         $local->save();
 

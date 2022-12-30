@@ -8,8 +8,8 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
-            <x-splade-form action="{{ route('service_category.store') }}" method="PUT" class="max-w-2xl space-y-6"
-                :default="$service_category">
+            <x-splade-form action="{{ route('service_category.update', $service_category) }}" method="PUT"
+                class="max-w-2xl space-y-6" :default="$service_category">
                 <x-splade-input label="Category Name" name="name" />
                 <x-splade-input label="Category Description" name="description" />
                 <h2>Event Settings</h2>

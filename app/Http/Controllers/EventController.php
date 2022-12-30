@@ -101,20 +101,22 @@ class EventController extends Controller
      */
     public function update(UpdateEventRequest $request, Event $event)
     {
-        $data = $request->validated();
+        $local = Event::find($event->id);
 
-        $event->allDay = $data['allDay'];
-        $event->start = $data['start'];
-        $event->end = $data['end'];
-        $event->title = $data['title'];
-        $event->url = $data['url'];
-        $event->editable = $data['editable'];
-        $event->overlap = $data['overlap'];
-        $event->service_id = $data['service_id'];
-        $event->canine_id = $data['canine_id'];
-        $event->user_id = $data['user_id'];
+        $local->allDay = $request->allDay;
+        $local->start = $request->start;
+        $local->end = $request->end;
+        $local->title = $request->title;
+        $local->url = $request->url;
+        $local->editable = $request->editable;
+        $local->overlap = $request->overlap;
+        $local->service_id = $request->service_id;
+        $local->canine_id = $request->canine_id;
+        $local->user_id = $request->user_id;
 
-        Toast::success("{$event->title} was updated on the schedule")->autoDismiss(5);
+        $local->save();
+
+        Toast::success("{$local->title} was updated on the schedule")->autoDismiss(5);
 
         return redirect()->route('events.index');
     }
