@@ -17,8 +17,8 @@ These are the things that need to be implemented. I have organized the list by e
 ### Schedule/Event Management
 - [x] - Implement calendar for scheduling services.
 - [ ] - Implement a way for us to block-off time. Clients should not be able to book on these days.
-- [ ] - Add weekly view
-- [ ] - Add daily view with time
+- [x] - Add weekly view
+- [x] - Add daily view with time
 
 ### Services
 
