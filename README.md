@@ -15,6 +15,7 @@ Over the last 3 years of running a in-home dog training business, we have found 
     - sync clients and billing with QuickBooks Online API.
     - All training related events and scheduling.
     - documents related to clients and dogs (vet records, diplomas).
+    - Allow owners to block-off time from the calendar!
 - Create a platform that we can manage ourselves and update as needed.
 - Have a client portal for them to log in and manage their schedule, documents and their dog.
 - Offer flexible scheduling options for us and our clients.
@@ -32,3 +33,6 @@ Over the last 3 years of running a in-home dog training business, we have found 
 - Nginx v1.21
 
 _I should include a `.dockerfile` for these &#8593;_
+
+### To-Do List
+I created a to-do list, for the project, that can be viewed [here](./TODO.md)
