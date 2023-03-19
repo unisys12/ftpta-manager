@@ -46,4 +46,12 @@ class User extends Authenticatable
     {
         return $this->hasMany(Canine::class);
     }
+
+    /**
+     * Here to possibly support blocking days off for a user
+     */
+    // public function reserves()
+    // {
+    //     return $this->hasMany(Reserve::class);
+    // }
 }

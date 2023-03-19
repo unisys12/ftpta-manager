@@ -10,6 +10,7 @@
                 <Link href="{{ route('service.index') }}">Services</Link>
                 <Link href="{{ route('service_category.index') }}">Categories</Link>
                 <Link href="{{ route('price_increments.index') }}">Price Increments</Link>
+                <Link href="{{ route('reserves.index') }}">Blocked Days</Link>
             </nav>
         </div>
     </header>

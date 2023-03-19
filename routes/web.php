@@ -12,6 +12,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\VeternarianController;
 use App\Http\Controllers\PriceIncrementController;
+use App\Http\Controllers\ReserveController;
 use App\Http\Controllers\ServiceCategoryController;
 
 /*
@@ -47,6 +48,7 @@ Route::middleware('splade')->group(function () {
         Route::resource('/dashboard/settings/service', ServiceController::class);
         Route::resource('/dashboard/settings/service_category', ServiceCategoryController::class);
         Route::resource('/dashboard/settings/price_increments', PriceIncrementController::class);
+        Route::resource('/dashboard/settings/reserves', ReserveController::class);
 
         Route::resource('/dashboard/canines', CanineController::class);
         Route::resource('/dashboard/veternarians', VeternarianController::class);
